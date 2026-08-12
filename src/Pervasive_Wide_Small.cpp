@@ -67,7 +67,7 @@ void Pervasive_Wide_Small::COG_reset()
 void Pervasive_Wide_Small::COG_getDataOTP()
 {
     hV_HAL_SPI_end(); // With unicity check
-    hV_HAL_SPI3_begin(); // Define 3-wire SPI pins
+    //hV_HAL_SPI3_begin(); // Define 3-wire SPI pins
 
     // Read OTP
     u_flagOTP = false;
@@ -125,17 +125,17 @@ void Pervasive_Wide_Small::COG_getDataOTP()
 
     hV_HAL_GPIO_clear(b_pin.panelDC); // Command
     hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-    hV_HAL_SPI3_write(0xa2);
+    //hV_HAL_SPI3_write(0xa2);
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
     hV_HAL_delayMilliseconds(10);
 
     hV_HAL_GPIO_set(b_pin.panelDC); // Data
     hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-    ui8 = hV_HAL_SPI3_read(); // Dummy
+    //ui8 = hV_HAL_SPI3_read(); // Dummy
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
     hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-    ui8 = hV_HAL_SPI3_read(); // First byte to be checked
+    //ui8 = hV_HAL_SPI3_read(); // First byte to be checked
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
     // Check bank
@@ -193,12 +193,12 @@ void Pervasive_Wide_Small::COG_getDataOTP()
         for (uint16_t index = 1; index < offsetA5; index += 1)
         {
             hV_HAL_GPIO_clear(b_pin.panelCS); // CS low = Select
-            ui8 = hV_HAL_SPI3_read();
+            //ui8 = hV_HAL_SPI3_read();
             hV_HAL_GPIO_set(b_pin.panelCS); // CS high = Unselect
         }
 
         hV_HAL_GPIO_clear(b_pin.panelCS); // CS low = Select
-        ui8 = hV_HAL_SPI3_read(); // First byte to be checked
+        //ui8 = hV_HAL_SPI3_read(); // First byte to be checked
         hV_HAL_GPIO_set(b_pin.panelCS); // CS high = Unselect
 
         if (ui8 != 0xa5)
@@ -225,18 +225,18 @@ void Pervasive_Wide_Small::COG_getDataOTP()
     for (uint16_t index = offsetA5 + 1; index < offsetPSR; index += 1)
     {
         hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-        ui8 = hV_HAL_SPI3_read();
+        //ui8 = hV_HAL_SPI3_read();
         hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
     }
     // Populate COG_initialData
     for (uint16_t index = 0; index < u_readBytes; index += 1)
     {
         hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-        COG_data[index] = hV_HAL_SPI3_read(); // Read OTP
+        //COG_data[index] = hV_HAL_SPI3_read(); // Read OTP
         hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
     }
 
-    hV_HAL_SPI3_end();
+    //hV_HAL_SPI3_end();
     u_flagOTP = true;
 
 #if (DEBUG_OTP == 1) // Debug COG_data
