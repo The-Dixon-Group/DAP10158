@@ -1,10 +1,8 @@
 # Pervasive Displays Library Suite - Driver for screens with wide temperature and embedded fast update
 
-[![Release](https://img.shields.io/github/v/release/pervasivedisplays/Pervasive_Wide_Small)](https://github.com/pervasivedisplays/Pervasive_Wide_Small/releases) ![Arduino lint](https://github.com/pervasivedisplays/Pervasive_Wide_Small/actions/workflows/main.yml/badge.svg) [![GitHub issues](https://img.shields.io/github/issues/pervasivedisplays/Pervasive_Wide_Small)](https://github.com/pervasivedisplays/Pervasive_Wide_Small/issues) [![](https://img.shields.io/badge/-Knowledge_Base-orange)](https://docs.pervasivedisplays.com/knowledge/)
 
 The driver is specifically designed for the [Pervasive Displays](https://www.pervasivedisplays.com) e-paper screens, extension boards and evaluation kits.
 
-![](https://docs.pervasivedisplays.com/knowledge/img/Pervasive_Displays_logo_gray.png)
 
 The **Pervasive_Wide_Small** supports the screens
 
@@ -29,7 +27,7 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 
 ## Documentation
 
-* [Knowledge Base](https://docs.pervasivedisplays.com/knowledge/) [![](https://img.shields.io/badge/-Knowledge_Base-orange)](https://docs.pervasivedisplays.com/knowledge/)
+* [Knowledge Base](https://docs.pervasivedisplays.com/knowledge/)
 * [Pervasive Displays Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
 * [Product line](https://www.pervasivedisplays.com/products/)
 
@@ -37,27 +35,12 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 
 * Please refer to the [Support Service](https://www.pervasivedisplays.com/technical-support/).
 
-## Installation
-
-Software
-
-* [Arduino IDE](https://www.arduino.cc/en/software) or [Arduino CLI](https://arduino.github.io/arduino-cli/)
-* [Installing Additional Arduino Libraries](https://www.arduino.cc/en/guide/libraries)
-
-    + Using the Library Manager
-    + Importing a `.zip` Library
-
-Hardware
-
-* [Connecting the Pervasive Displays e-Paper EPD Extension Kit Gen 3](https://embeddedcomputing.weebly.com/connecting-the-e-paper-epd-extension-kit-gen-3.html)
 
 ## Configuration
 
 Software
 
-* Arduino SDK
-* SPI library
-* Wire library
+* MCC Library
 
 Hardware
 
@@ -65,11 +48,4 @@ Hardware
 * Pervasive Displays EPD Extension Kit Gen 4 (EXT4)
 * Pervasive Displays iTC screens wide temperature and embedded fast update (film `K`)
 
-## Licence
-
-**Copyright** &copy; Pervasive Displays Inc., 2021-2026
-
-*For exclusive use with Pervasive Displays screens*
-
-**Licence** [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](./LICENCE.md)
 
