@@ -483,10 +483,10 @@ void Pervasive_Wide_Small::updateNormal(FRAMEBUFFER_CONST_TYPE frame, uint32_t s
     // Start SPI
     hV_HAL_SPI_begin(16000000); // Fast 16 MHz, with unicity check
 
-    COG_initial(UPDATE_NORMAL); // Initialise
+    COG_initial(UPDATE_FAST); // Initialise
     COG_sendImageDataNormal(frame, sizeFrame);
 
-    COG_update(UPDATE_NORMAL); // Update
+    COG_update(UPDATE_FAST); // Update
     COG_stopDCDC(); // Power off
 
     // hV_HAL_SPI_end(); // With unicity check
